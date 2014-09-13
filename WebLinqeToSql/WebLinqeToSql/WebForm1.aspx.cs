@@ -21,6 +21,8 @@ namespace WebLinqeToSql
             //    Response.Write(i.CUST_ADDRESS+",,");
             //}
 
+
+
             //////////////////////////////////////////////////////////////////////////
             //using entity framework below line is written
             //var result = dbcon.SUPPLIERs.Select(x => new {Name = x.SUPP_NAME, Address = x.SUPP_ADDRESS });
