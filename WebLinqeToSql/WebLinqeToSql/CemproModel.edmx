@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CemProDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TBL_SUPPLIER">
+          <Key>
+            <PropertyRef Name="SUPP_ID" />
+          </Key>
+          <Property Name="SUPP_ID" Type="int" Nullable="false" />
+          <Property Name="SUPP_CODE" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="SUPP_NAME" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="SUPP_ADDRESS" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="SUPP_PHONE" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SUPP_TYPE" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SUPP_CREATEDBY" Type="int" Nullable="false" />
+          <Property Name="SUPP_CREATEDDT" Type="datetime" Nullable="false" />
+          <Property Name="SUPP_ISACTIVE" Type="nvarchar" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="CemProDBModelStoreContainer">
+          <EntitySet Name="TBL_SUPPLIER" EntityType="Self.TBL_SUPPLIER" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CemProDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="SUPPLIER">
+          <Key>
+            <PropertyRef Name="SUPP_ID" />
+          </Key>
+          <Property Name="SUPP_ID" Type="Int32" Nullable="false" />
+          <Property Name="SUPP_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SUPP_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SUPP_ADDRESS" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SUPP_PHONE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SUPP_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SUPP_CREATEDBY" Type="Int32" Nullable="false" />
+          <Property Name="SUPP_CREATEDDT" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SUPP_ISACTIVE" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="CemProDBContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="SUPPLIERs" EntityType="CemProDBModel.SUPPLIER" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CemProDBModelStoreContainer" CdmEntityContainer="CemProDBContext">
+          <EntitySetMapping Name="SUPPLIERs">
+            <EntityTypeMapping TypeName="CemProDBModel.SUPPLIER">
+              <MappingFragment StoreEntitySet="TBL_SUPPLIER">
+                <ScalarProperty Name="SUPP_ID" ColumnName="SUPP_ID" />
+                <ScalarProperty Name="SUPP_CODE" ColumnName="SUPP_CODE" />
+                <ScalarProperty Name="SUPP_NAME" ColumnName="SUPP_NAME" />
+                <ScalarProperty Name="SUPP_ADDRESS" ColumnName="SUPP_ADDRESS" />
+                <ScalarProperty Name="SUPP_PHONE" ColumnName="SUPP_PHONE" />
+                <ScalarProperty Name="SUPP_TYPE" ColumnName="SUPP_TYPE" />
+                <ScalarProperty Name="SUPP_CREATEDBY" ColumnName="SUPP_CREATEDBY" />
+                <ScalarProperty Name="SUPP_CREATEDDT" ColumnName="SUPP_CREATEDDT" />
+                <ScalarProperty Name="SUPP_ISACTIVE" ColumnName="SUPP_ISACTIVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
